@@ -1,0 +1,39 @@
+openapi: "3.0.0"
+
+info:
+  title: TestAPI for the course security
+  version: "1.0"
+  description: Just a test for the security course
+  contact:
+    name: Sebastian Schlesinger
+    email: Sebastian.Schlesinger@hwr-berlin.de
+
+paths:
+  /test:
+    get:
+      description: just a test output
+      operationId: api.main.test
+      responses:
+        200:
+          description: "sends a test message"
+          content:
+            text/plain:
+              schema:
+                type: string
+  /greet:
+    get:
+      summary: just a test output
+      parameters:
+      - name: name
+        in: query
+        schema:
+          type: string
+      description: Sends a greeting to the requestor
+      operationId: api.main.greet
+      responses:
+        200:
+          description: "Greeting"
+          content:
+            text/plain:
+              schema:
+                type: string
